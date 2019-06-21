@@ -10,11 +10,15 @@ III. Suggested Applications
 
 ============I. Getting Started============
 
+Visual Basic for Applications (VBA)
    a. Create a new workbook and select an empty worksheet. The Life algorithm will display output in the cells of the worksheet.
    b. Go to the Developer tab and open the VBE (Visual Basic Editor).
    c. Create a new module, then copy and paste the code in the Main file into the module. 
    d. Execute the code by pressing the Play button in the VBE.
    e. View the pattern output of the algorithm expressed as a 20X20 array of cells containing 1s and/or 0s in the selected worksheet.
+   
+C++
+Comming soon...
 
 ============II. Introduction to the Principles of Life============
 
