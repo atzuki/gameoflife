@@ -1,5 +1,6 @@
 # gameoflife
-Welcome to the VBA (Visual Basic for Applications) adaptation of the Game of Life (or simply Life), developed by John Horton Conway. Newcomers have a chance to learn about the principles of Life by executing or modifying the code. This document is structured as follows:
+
+Welcome to an educational project to provide adaptations of the aritifical intelligence algorithm, Game of Life (or simply Life), orignially developed by John Horton Conway. Newcomers have a chance to learn about the principles of Life by executing or modifying the code. This document is structured as follows:
 
 I. Getting Started
 II. Introduction to the Principles of Life
