@@ -28,7 +28,7 @@ Comming soon...
 
 ============II. Introduction to the Principles of Life============
 
-Life simulates cellular behavior observed in nature by automating the production of cellular patterns according to three principles: 
+Life simulates cellular behavior observed in nature according to three principles: 
 
 1) If a cell is in state 1 at time t and has exactly two (no more, n less) of its neighbors also in state 1 at time t, then at time t+1    it will remain in state 1.
 
