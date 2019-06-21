@@ -19,7 +19,8 @@ Visual Basic for Applications (VBA)
    
    d. Execute the code by pressing the Play button in the VBE.
    
-   e. View the pattern output of the algorithm expressed as a 20X20 array of cells containing 1s and/or 0s in the selected worksheet.
+   e. View the pattern output of the algorithm expressed as a 20X20 array of cells containing 1s and/or 0s in the selected 
+      worksheet.
    
 C++
 
