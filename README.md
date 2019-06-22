@@ -1,6 +1,6 @@
 # gameoflife
 
-Welcome to an educational project to provide adaptations of the aritifical intelligence algorithm, Game of Life (or simply Life), orignially developed by John Horton Conway. Newcomers have a chance to learn about the principles of Life and aritificial intelligence (AI) by executing or modifying the code. This document is structured as follows:
+Welcome to an educational project to provide adaptations of the aritifical intelligence algorithm, Game of Life (or simply Life), orignially developed by John Horton Conway. Newcomers have a chance to learn about the principles of Life and aritificial intelligence by executing or modifying the code. This document is structured as follows:
 
 I. Getting Started
 
