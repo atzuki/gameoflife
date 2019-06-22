@@ -11,6 +11,7 @@ III. Suggested Applications
 ============I. Getting Started============
 
 Visual Basic for Applications (VBA)
+
    a. Create a new workbook and select an empty worksheet. The Life algorithm will display output in the cells of the worksheet.
    
    b. Go to the Developer tab and open the VBE (Visual Basic Editor).
