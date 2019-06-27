@@ -5,7 +5,7 @@ Public Sub Game_of_Life()
 
 'Game of Life rules:
 '
-'1) If a cell is in state 1 at time t and has exactly two (no more, n less)
+'1) If a cell is in state 1 at time t and has exactly two (no more, no less)
 '   of its neighbors also in state 1 at time t, then at time t+1 it will
 '   remain in state 1.
 '
