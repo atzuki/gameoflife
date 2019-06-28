@@ -25,7 +25,7 @@ Visual Basic for Applications (VBA)
    
 C++
 
-Comming soon...
+Currently under development. 
 
 ============II. Introduction to the Principles of Life============
 
