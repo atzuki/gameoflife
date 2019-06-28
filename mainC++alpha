@@ -1,0 +1,184 @@
+/*
+Game of Life Alpha
+
+Adapted to C++ by Edric John Nacpil
+
+Game of Life rules:
+
+1) If a cell is in state 1 at time t and has exactly two (no more, n less)
+   of its neighbors also in state 1 at time t, then at time t+1 it will
+   remain in state 1.
+
+2) Whatever the state of a cell at time t, if exactly three (no more,
+   no less) of its eight neighbors are in state 1 at time t, then at
+   time t+1 it will be in state 1.
+
+3) For any other situation at time t, then at time t+1 the cell will
+   be in state 0.
+
+Source: Artificial Intelligence: The Basics, Kevin Warwick, 2012
+*/
+
+#include "stdafx.h"
+#include <string>
+#include <iostream>
+#include <random>
+#include <valarray>
+using namespace std;
+
+int n;
+int i;
+int j; 
+int Life;
+int neighbor [7];
+int neighbors;
+bool Autoassign;
+int s[99][99];
+bool runsim;
+string answer;
+
+
+int main()
+{
+	runsim = true;
+	
+	while (runsim == true) {
+		//Specify matrix size, n, and number of interations, Life.
+		cout << "Please enter size of display matrix for cells: ";
+		cin >> n;
+		cout << "n= " << n;
+		cout << "\nPlease enter a positive integer value for Life: ";
+		cin >> Life;
+		cout << "Life= " << Life << endl;
+
+		//Randomly assign integer value of 0 or 1 to grid displayed in command window. 
+		//default_random_engine generator;
+		random_device generator;
+		uniform_int_distribution<int> distribution(0, 1);
+		for (size_t i = n; i--;) {
+
+			for (size_t j = n; j--;) {
+				s[i][j] = distribution(generator);
+			}
+		}
+
+		//Read values of grid at time, t.
+		for (size_t t = Life; t--;) {
+
+			for (size_t i = n; i--;) {
+				for (size_t m = 8; m--;) {
+					neighbor[m] = 0;
+				}
+				for (size_t j = n; j--;) {
+					//Conditions for cells at edges of grid.
+					if (i - 1 == 0 & j - 1 == 0) {
+						neighbor[1] = s[i][j + 1];
+						neighbor[2] = s[i + 1][j];
+						neighbor[3] = s[i + 1][j + 1];
+
+					}
+					if (i + 1 == n + 1 & j - 1 == 0) {
+						neighbor[1] = s[i - 1][j];
+						neighbor[2] = s[i - 1][j + 1];
+						neighbor[3] = s[i][j + 1];
+					}
+					if (i - 1 == 0 & j + 1 == n + 1) {
+						neighbor[1] = s[i][j - 1];
+						neighbor[2] = s[i + 1][j - 1];
+						neighbor[3] = s[i + 1][j];
+					}
+					if (i + 1 == n + 1 & j + 1 == n + 1) {
+						neighbor[1] = s[i - 1][j];
+						neighbor[2] = s[i - 1][j - 1];
+						neighbor[3] = s[i][j - 1];
+
+					}
+					if (i - 1 == 0) {
+						neighbor[1] = s[i][j - 1];
+						neighbor[2] = s[i + 1][j - 1];
+						neighbor[3] = s[i + 1][j];
+						neighbor[4] = s[i + 1][j + 1];
+						neighbor[5] = s[i][j + 1];
+					}
+					if (i + 1 == n + 1) {
+						neighbor[1] = s[i][j - 1];
+						neighbor[2] = s[i - 1][j - 1];
+						neighbor[3] = s[i - 1][j];
+						neighbor[4] = s[i - 1][j + 1];
+						neighbor[5] = s[i][j + 1];
+					}
+					if (j - 1 == 0) {
+						neighbor[1] = s[i - 1][j];
+						neighbor[2] = s[i - 1][j + 1];
+						neighbor[3] = s[i][j + 1];
+						neighbor[4] = s[i + 1][j + 1];
+						neighbor[5] = s[i + 1][j];
+					}
+					if (j + 1 == n + 1) {
+						neighbor[1] = s[i - 1][j];
+						neighbor[2] = s[i - 1][j - 1];
+						neighbor[3] = s[i][j - 1];
+						neighbor[4] = s[i + 1][j - 1];
+						neighbor[5] = s[i + 1][j];
+					}
+
+					//For cells that are not at edges of grid.
+					neighbor[1] = s[i - 1][j - 1];
+					neighbor[2] = s[i - 1][j];
+					neighbor[3] = s[i - 1][j + 1];
+					neighbor[4] = s[i][j - 1];
+					neighbor[5] = s[i][j + 1];
+					neighbor[6] = s[i + 1][j - 1];
+					neighbor[7] = s[i + 1][j];
+					neighbor[8] = s[i + 1][j + 1];
+
+					//Apply game of life rules to find t+1 state value of a cell.
+					valarray<int> valarray(neighbor, 8);
+					if (valarray.sum() == 3 || (s[i][j] == 1 & valarray.sum() == 2)) {
+						s[i][j] = 1;
+					}
+					else {
+						s[i][j] = 0;
+					}
+				}
+			}
+			//Write cell values of grid in command window. 1= '*' and 0 = '  '.
+			cout << "Output" << endl;
+			for (size_t i = n; i--;) {
+
+				for (size_t j = n; j--;) {
+					if (s[i][j] == 1) {
+						cout << "*";
+					}
+					else {
+						cout << "  ";
+					}
+				}
+
+				cout << endl;
+			}
+			system("cls");
+		}
+
+		cout << "Output" << endl;
+		for (size_t i = n; i--;) {
+
+			for (size_t j = n; j--;) {
+				if (s[i][j] == 1) {
+					cout << "*";
+				}
+				else {
+					cout << "  ";
+				}
+			}
+
+			cout << endl;
+		}
+	
+		cout << "Simulation complete." << endl;
+		system("pause");
+	}
+	
+	return 0;
+}
+
