@@ -25,7 +25,7 @@ Visual Basic for Applications (VBA)
    
 C++
 
-Currently under development. 
+Currently under development. For current information, please refer to https://github.com/azukipan/gameoflife/tree/gameoflifeC++.
 
 ============II. Introduction to the Principles of Life============
 
